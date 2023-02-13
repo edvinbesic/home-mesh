@@ -1,4 +1,4 @@
-use Mix.Config
+import Config
 
 # Import base node config
 import_config "config.node.exs"
