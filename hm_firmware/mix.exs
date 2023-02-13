@@ -1,3 +1,15 @@
+#
+#  Home Mesh: Firmware
+#  ---
+#  The firmware project is a poncho project where we conditionally pull in the
+#  applications we wish to run based on the HM_NODE_TYPE environmental variable.
+#  This allows us to manage the nerves/hardware integration in one project and
+#  keep our business logic separate but composable.
+#
+#  For example, to compile our collector node for rpi0:
+#
+#    HM_NODE_TYPE=collector MIX_TARGET=rpi0 mix firmware
+#
 defmodule HmFirmware.MixProject do
   use Mix.Project
 
@@ -68,13 +80,13 @@ defmodule HmFirmware.MixProject do
 
   defp deps(:gateway) do
     [
-      {:hm_gateway, path: "../hm_gateway"}
+      {:hm_gateway, path: "../hm_gateway", targets: @all_targets}
     ]
   end
 
   defp deps(:collector) do
     [
-      {:hm_collector, path: "../hm_collector"}
+      {:hm_collector, path: "../hm_collector", targets: @all_targets}
     ]
   end
 
