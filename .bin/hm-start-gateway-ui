@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e;
+
+cd hm_gateway_ui
+iex -S mix phx.server
+
