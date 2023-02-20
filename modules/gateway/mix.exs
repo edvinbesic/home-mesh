@@ -21,7 +21,7 @@ defmodule HomeMeshGateway.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:hm_gateway_ui, path: "../hm_gateway_ui"}
+      {:hm_gateway_ui, path: "../gateway_ui"}
       # {:dep_from_hexpm, "~> 0.3.0"},
       # {:dep_from_git, git: "https://github.com/elixir-lang/my_dep.git", tag: "0.1.0"}
     ]

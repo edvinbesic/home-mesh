@@ -24,3 +24,6 @@ hm_collector-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
+
+# Ignore the local server command
+local.sh

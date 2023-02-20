@@ -15,7 +15,9 @@ defmodule HmFirmware.MixProject do
 
   @app :hm_firmware
   @version "0.1.0"
-  @all_targets [:rpi, :rpi0, :rpi2, :rpi3, :rpi3a, :rpi4, :bbb, :osd32mp1, :x86_64, :grisp2]
+  @all_targets [
+    :rpi, :rpi0, :rpi2, :rpi3, :rpi3a, :rpi4, :bbb, :osd32mp1, :x86_64, :grisp2
+  ]
   @node_type String.to_atom(System.get_env("HM_NODE_TYPE"))
 
   def project do
@@ -80,13 +82,13 @@ defmodule HmFirmware.MixProject do
 
   defp deps(:gateway) do
     [
-      {:hm_gateway, path: "../hm_gateway", targets: @all_targets}
+      {:hm_gateway, path: "../../modules/gateway", targets: @all_targets}
     ]
   end
 
   defp deps(:collector) do
     [
-      {:hm_collector, path: "../hm_collector", targets: @all_targets}
+      {:hm_collector, path: "../../modules/collector", targets: @all_targets}
     ]
   end
 
